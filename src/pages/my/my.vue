@@ -3,16 +3,19 @@
 
 <template>
   <div>
-    detail
-    <a href="/index.html">dianwo</a>
+    my
+    <tab-Bar />
   </div>
 </template>
 
 <script>
+import TabBar from 'components/tabBar/tabBar'
+console.log('4444',TabBar)
 
 export default {
-  name: 'detail',
+  name: 'my',
   components: {
+    TabBar
   }
 }
 </script>

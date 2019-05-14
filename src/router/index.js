@@ -1,28 +1,40 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Index from '../pages/index'
+import Detail from '../pages/detail'
+import My from '../pages/my'
 
-// 进度条
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+Vue.use(VueRouter)
 
-// 路由数据
-import routes from '../routerConfig'
-
+const routes = [
+    {
+        path: '/',
+        name: 'index',
+        component: Index,
+        meta: {
+            title: '首页'
+        }
+    },
+    {
+        path: '/detail',
+        name: 'detail',
+        component: Detail,
+        meta: {
+            title: '详情'
+        }
+    },
+    {
+        path: '/my',
+        name: 'my',
+        component: My,
+        meta: {
+            title: '我的'
+        }
+    },
+]
 // 导出路由 在 main.js 里使用
 const router = new VueRouter({
     routes
-})
-
-router.beforeEach((to, from, next) => {
-    // 进度条
-    NProgress.start()
-})
-
-router.afterEach(to => {
-    // 进度条
-    NProgress.done()
-    // 更改标题
-    // util.title(to.meta.title)
 })
 
 export default router
