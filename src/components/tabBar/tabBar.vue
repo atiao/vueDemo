@@ -5,11 +5,10 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 105px;
     .ui-list, .ui-my{
         flex: 1;
-        height: rem(40px);
         text-align: center;
-        line-height: rem(40px);
     }
 }
 </style>

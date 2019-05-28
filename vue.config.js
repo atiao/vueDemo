@@ -10,10 +10,6 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 
-const px2remOpts = {
-    rootValue: 75
-}
-
 module.exports = {
     devServer: {
         before(app) {
@@ -37,17 +33,20 @@ module.exports = {
             })
         }
     },
+    css: {
+        loaderOptions: {
+            postcss: {
+                plugins: [
+                    require('postcss-plugin-px2rem')({
+                        rootValue: 75, 
+                    }),
+                ]
+            }
+        }
+    },
+
     chainWebpack(config) {
-        config.module
-            .rule('css')
-            .test(/\.css$/)
-            .oneOf('vue')
-            .resourceQuery(/\?vue/)
-            .use('px2rem')
-            .loader('px2rem-loader')
-            .options({
-                remUnit: 37.5
-        })
+       
         config.plugins
             .delete('prefetch')
             .delete('preload')

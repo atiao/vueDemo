@@ -15,7 +15,7 @@ console.log('4444',TabBar)
 export default {
   name: 'my',
   components: {
-    TabBar
+    TabBar,
   }
 }
 </script>

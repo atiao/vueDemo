@@ -3,23 +3,7 @@
 
 <template>
   <div >
-    <div class="box" :class="{minwidht: flag}">
-      <ul>
-        <li>
-          <router-link to="/detail">课程课程课程课程课程课程课程课程</router-link>
-        </li>
-        <li>
-          <router-link to="/detail">课程课程课程课程课程课程课程课程</router-link>
-        </li>
-        <li>
-          <router-link to="/detail">课程课程课程课程课程课程课程课程</router-link>
-        </li>
-        <li>
-          <router-link to="/detail">课程课程课程课程课程课程课程课程</router-link>
-        </li>
-      </ul>
-    </div>
-    <div @click="change">clickbutton</div>
+    <div class="box">55555</div>
     <tab-Bar />
   </div>
 </template>
@@ -31,7 +15,7 @@ console.log('4444',TabBar)
 export default {
   name: 'index',
   components: {
-    TabBar
+    TabBar,
   },
   data() {
     return {
@@ -39,9 +23,7 @@ export default {
     }
   },
   methods: {
-    change() {
-      this.flag = !this.flag
-    }
+   
   }
 }
 </script>
@@ -55,8 +37,4 @@ export default {
   height: 200px;
   /* overflow: hidden; */
 }
-.minwidht{
-  width: 20px;
-}
-
 </style>
